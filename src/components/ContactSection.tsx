@@ -7,17 +7,20 @@ const socials = [
   {
     name: "Email",
     icon: Mail,
-    href: "mailto:sudeepyadav7272@gmail.com",
+    href: "mailto:youremail@example.com",
+    color: "from-blue-400 to-cyan-500",
   },
   {
     name: "GitHub",
     icon: Github,
     href: "https://github.com/gensis01",
+    color: "from-gray-400 to-gray-600",
   },
   {
     name: "Telegram",
     icon: Send,
-    href: "https://t.me/MufasaXz",
+    href: "https://t.me/yourusername",
+    color: "from-blue-400 to-blue-600",
   },
 ];
 
@@ -62,10 +65,12 @@ const ContactSection = () => {
               transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <div className="w-16 h-16 bg-card rounded-2xl flex items-center justify-center border border-border hover:border-primary/50 transition-all duration-300">
-                <social.icon className="text-muted-foreground group-hover:text-primary transition-colors" size={28} />
+              <div className="w-16 h-16 glass rounded-2xl flex items-center justify-center glow-hover">
+                <social.icon className="text-muted-foreground group-hover:text-foreground transition-colors" size={28} />
               </div>
-              <div className="absolute inset-0 rounded-2xl bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <motion.div
+                className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-20 transition-opacity duration-300`}
+              />
             </motion.a>
           ))}
         </motion.div>
